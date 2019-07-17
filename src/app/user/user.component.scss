@@ -1,0 +1,51 @@
+.content {
+  width: 80%;
+  margin: 0 auto;
+  &__manager {
+    margin-bottom: 200px;
+    margin-top: 50px;
+    label{
+        margin-left: 10px;
+        color: seagreen;
+    }
+    input,
+    button,select {
+      height: 35px;
+      border-radius: 3px;
+      background: white;
+      border: 1px solid gray;
+      margin-left: 15px;
+      outline: none;
+      padding-left: 10px;
+      width: 150px;
+    }
+    button{
+        background: seagreen;
+        color: white;
+        border: none;
+    }
+  }
+  &__table {
+    table {
+      width: 100%;
+    }
+    table,
+    tr td,
+    th {
+      border: 1px solid springgreen;
+      border-collapse: collapse;
+    }
+    td{
+        padding: 10px;
+    }
+    button{
+        background:seagreen;
+        border: none;
+        border-radius: 3px;
+        width: 50px;
+        margin-left: 15px;
+        color: white;
+        padding: 4px;
+    }
+  }
+}

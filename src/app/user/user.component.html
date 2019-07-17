@@ -1,0 +1,51 @@
+<div class="content">
+    <div class="content__manager">
+        <label for="">
+            Name:
+            <input type="text"  [(ngModel)]="newName" (ngModelChange)="name" placeholder="Name">
+        </label>
+        <label for="">
+            Age:
+            <input type="text" [(ngModel)]="newAge" placeholder="Age">
+        </label>
+        <label for="">
+            Address:
+            <input type="text" [(ngModel)]="newAddress" placeholder="Address">
+        </label>
+        <label for="">
+            Gender:
+            <select name="" id="" [(ngModel)]="newGender">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+            </select>
+        </label>
+        <button  (click)="addUser(listUsers)"  >Add User</button>
+    </div>
+    <div class="content__table">
+        <table>
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Age</td>
+                    <td>Address</td>
+                    <td>Gender</td>
+                    <td>Edit</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.age }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>
+                        <button (click) = "deleteUser(id)" >Delete</button>
+                        <button>Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
