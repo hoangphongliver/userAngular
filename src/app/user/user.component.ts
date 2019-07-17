@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
   public newGender: string = 'Gender';
 
   users = [
-    {id: 1 ,name : 'Hoang Phong' , age: '23' , address: 'Bac Giang' , gender: 'Nam' }
+    {id: 1 ,name : 'Hoang Phong' , age: 23 , address: 'Bac Giang' , gender: 'Nam' }
   ];
 
   constructor() { }
