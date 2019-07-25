@@ -1,0 +1,23 @@
+form {
+  display: flex;
+  flex-direction: column;
+  label {
+    margin-bottom: 40px;
+    h4 {
+      margin-bottom: 10px;
+    }
+    p{
+      margin-top: 10px;
+      color: red;
+    }
+    input {
+      width: 30%;
+      height: 30px;
+      padding-left: 15px;
+    }
+  }
+  button {
+    width:15%;
+    height: 30px;
+  }
+}

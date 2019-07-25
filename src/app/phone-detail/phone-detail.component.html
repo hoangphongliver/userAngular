@@ -1,0 +1,12 @@
+<h1>Phone Detail</h1>
+<div class="phone-detail">
+    <div class="phone-detail__img" [id] = "color">
+        <img src="{{ phone.img }}" alt="">
+    </div>
+    <div class="phone-detail__des">
+        <h2>Tên: {{ phone.name }} </h2>
+        <p>Giá: {{ phone.price }} VNĐ</p>
+        <p>Mô tả: {{ phone.des }}</p>
+    </div>
+</div>
+<button (click)="backToProduct()">Back</button>

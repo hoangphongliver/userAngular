@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+}
+.content{
+    display: flex;
+    app-menu{
+        width: 20%;
+    }
+    app-list-phone{
+        margin-top: 30px;
+        margin-left: 50px;
+        width: calc(80% - 50px);
+    }
+}

@@ -1,0 +1,40 @@
+<h1>Quản Lý Điện Thoại</h1>
+<div class="addPhone">
+    <form action="" #form="ngForm" (ngSubmit) = "onSubmit(form)" >
+        <label for="">
+            Name:
+            <input type="text"  [(ngModel)]="phone.name" required name="name">
+            <p *ngIf="form.controls.name?.errors?.required && form.controls.name?.touched">Tên không được để trống</p>
+        </label>
+        <label for="">
+            Ảnh:
+            <input type="text" [(ngModel)]="phone.img" required name="img">
+            <p *ngIf="form.controls.name?.errors?.required && form.controls.name?.touched">Ảnh không được để trống</p>
+        </label>
+        <label for="">
+            Giá:
+            <input type="text" [(ngModel)]="phone.price" required name="price">
+            <p *ngIf="form.controls.name?.errors?.required && form.controls.name?.touched">Giá không được để trống</p>
+        </label>
+        <label for="">
+            Mô tả:
+            <input type="text" name="" id="" [(ngModel)]="phone.des" name="des">
+        </label>
+        <button type="submit" (click) = "addPhone()" [disabled]="form.invalid">Thêm</button>
+        <p *ngIf="form.controls.disabled" >Vui long nhap day du</p>
+    </form>
+</div>
+<div class="phone">
+    <div class="phone__des" *ngFor="let phone of listPhone ; let id = index">
+        <a routerLink="/phone-detail/{{id + 1}}">
+            <div class="phone__img">
+                <img src="{{ phone.img }}" alt="">
+            </div>
+            <div class="des">
+                <h3>Tên: {{  phone.name }} </h3>
+                <p>Giá: {{ phone.price }} VNĐ</p>
+            </div>
+        </a>
+        <button (click)="deletePhone(id)">Delete</button>
+    </div>
+</div>

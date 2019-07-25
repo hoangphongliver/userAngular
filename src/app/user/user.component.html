@@ -19,7 +19,7 @@
                 <option value="Nữ">Nữ</option>
             </select>
         </label>
-        <button  (click)="addUser(listUsers)"  >Add User</button>
+        <button  (click)="addUser(listUsers)" >Add User</button>
     </div>
     <div class="content__table">
         <table>
@@ -34,15 +34,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let user of users">
-                    <td>{{ user.id }}</td>
+                <tr *ngFor="let user of users ; let id= index ; let o = odd ; let e = even">
+                    <td>{{ id + 1 }}</td>
                     <td>{{ user.name }}</td>
                     <td>{{ user.age }}</td>
                     <td>{{ user.address }}</td>
                     <td>{{ user.gender }}</td>
                     <td>
                         <button (click) = "deleteUser(id)" >Delete</button>
-                        <button>Edit</button>
+                        <button (click) ="editUser(id)">Edit</button>
+                        <button (click)='updateUser(id)'>Update User</button>
                     </td>
                 </tr>
             </tbody>

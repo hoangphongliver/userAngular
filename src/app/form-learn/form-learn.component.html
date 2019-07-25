@@ -1,0 +1,31 @@
+<form action="" #form = "ngForm" (ngSubmit)="onSubmit(form)" [formGroup]="formUsers">
+    <label for="">
+        <h4>Name:</h4>
+        <input type="text" name="name" id="name" placeholder="Name" formControlName="userName" [(ngModel)]="Users.name">
+        <p *ngIf="formUsers.get('userName')?.errors?.required && formUsers.get('userName').dirty" >Tên không được để trống</p>
+    </label>
+   
+    <label for="">
+        <h4>Age:</h4>
+        <input type="number" name="age" id="age" placeholder="Age" formControlName="userAge" [(ngModel)]="Users.age">
+        <p *ngIf="formUsers.get('userAge')?.errors?.required && formUsers.get('userAge').dirty" >Tuổi không được để trống</p>
+    </label>
+    <label for="">
+        <h4>Email:</h4>
+        <input type="text" name="address" id="address" placeholder="Email" formControlName="userAddress" [(ngModel)]="Users.address">
+        <div *ngIf="formUsers.get('userAddress').dirty" >
+            <p *ngIf="formUsers.get('userAddress')?.errors?.required" >Địa chỉ không được để trống</p>
+            <p *ngIf="formUsers.get('userAddress')?.errors?.email" >Nhập đúng định dạng Email</p>
+        </div>
+    </label>
+  
+    <label for="">
+        <h4>Phone:</h4>
+        <input type="text" name="phone" id="phone" placeholder="Phone" formControlName="userPhone" [(ngModel)]="Users.phone">
+        <div *ngIf="formUsers.get('userPhone').dirty">
+            <p *ngIf="formUsers.get('userPhone')?.errors?.required" >Không được để trống</p>
+            <p *ngIf="formUsers.get('userPhone')?.errors?.minlength || formUsers.get('userPhone')?.errors?.pattern" >SĐT phải nhiều hơn 9 số</p>
+        </div>
+    </label>
+    <button type="submit" [disabled]="!formUsers.valid">Submit</button>
+</form>

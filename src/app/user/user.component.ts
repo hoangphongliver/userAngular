@@ -6,17 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  
+
   public newName: string = '';
 
   public newAge: number;
 
   public newAddress: string = '';
-  
-  public newGender: string = 'Gender';
+
+  public newGender: string = '';
 
   users = [
-    {id: 1 ,name : 'Hoang Phong' , age: 23 , address: 'Bac Giang' , gender: 'Nam' }
+    { name: 'Hoang Phong', age: 23, address: 'Bac Giang', gender: 'Nam' }
   ];
 
   constructor() { }
@@ -24,17 +24,39 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
-  addUser(){
+  addUser() {
     this.users.push({
-      id: this.users.length + 1,
-      name: this.newName ,
+      name: this.newName,
       age: this.newAge,
       address: this.newAddress,
       gender: this.newGender
     });
   }
-  deleteUser(id){
-    const index = this.users.findIndex(user => user.id === id);
-    this.users.splice(index , 1);
+  deleteUser(id: number) {
+    this.users.splice(id, 1);
+    console.log(id);
+    
+  }
+
+  editUser(id: number) {
+    this.users.forEach((user, index) => {
+      if (id === index) {
+        this.newName = user.name;
+        this.newAge = user.age;
+        this.newAddress = user.address;
+        this.newGender = user.gender;
+      }
+    });
+  }
+
+  updateUser(id: number){
+    this.users.forEach((user, index) => {
+      if (id === index) {
+        user.name = this.newName;
+        user.age = this.newAge;
+        user.address = this.newAddress;
+        user.gender = this.newGender;
+      }
+    });
   }
 }

@@ -1,1 +1,7 @@
-<app-user></app-user>
+<div class="content">
+    <app-menu></app-menu>
+    <app-list-phone [number]="number" [user]="Users" (userName)="getName($event)"></app-list-phone>
+</div>
+
+
+<h1>{{ name }}</h1>

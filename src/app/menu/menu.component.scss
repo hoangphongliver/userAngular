@@ -1,0 +1,19 @@
+nav {
+  background: seagreen;
+  height: 100vh;
+  position: fixed;
+  width: 20%;
+  ul {
+    padding: 0;
+    margin-top: 20%;
+    li {
+      list-style: none;
+      border-bottom: 1px solid white;
+      padding: 15px 10px 15px 100px;
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

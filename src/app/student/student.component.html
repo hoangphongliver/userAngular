@@ -1,0 +1,4 @@
+<div *ngFor="let student of students" class="student">
+   <a routerLink="/student-detail/{{ student.id }}/{{ student.name }}/{{ student.age }}/{{ student.address }}">{{ student.name }}</a>
+</div>
+<!-- <router-outlet></router-outlet> -->
